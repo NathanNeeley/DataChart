@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>DataChart</title>
+    <link href=format.css rel=stylesheet type=text/css>
+</head>
+<body>
+@{
+    if (IsPost)
+    {
+        var name1 = Request["name1"];
+        var age1 = Request["age1"];
+        var name2 = Request["name2"];
+        var age2 = Request["age2"];
+        var name3 = Request["name3"];
+        var age3 = Request["age3"];
+        var name4 = Request["name4"];
+        var age4 = Request["age4"];
+        var myChart = new Chart(width: 600, height: 400)
+   .AddTitle("NamesAges")
+   .AddSeries(chartType: "column",
+      xValue: new[] { name1, name2, name3, name4},
+      yValues: new[] { age1, age2, age3, age4})
+   .Write();
+    }
+
+    else
+    {
+
+        <center>
+            <h1>Data Chart Web Page</h1><br />
+                                        <form method="post" action="">
+                                            <label for="name1">Name:</label>
+                                            <input type="text" id="name1" name="name2" /><br />
+                                            <label for="age1">Age:</label>
+                                            <input type="text" id="age1" name="age1" /><br />
+                                            <label for="name2">Name:</label>
+                                            <input type="text" id="name2" name="name2" /><br />
+                                            <label for="age2">Age:</label>
+                                            <input type="text" id="age2" name="age2" /><br />
+                                            <label for="name3">Name:</label>
+                                            <input type="text" id="name3" name="name3" /><br />
+                                            <label for="age3">Age:</label>
+                                            <input type="text" id="age3" name="age3" /><br />
+                                            <label for="name4">Name:</label>
+                                            <input type="text" id="name4" name="name4" /><br />
+                                            <label for="age4">Age:</label>
+                                            <input type="text" id="age4" name="age1" /><br />
+                                            <input type="submit" value="Submit" class="submit" />
+                                        </form>
+        </center>
+     }
+ }
+</body>
+</html>
+
